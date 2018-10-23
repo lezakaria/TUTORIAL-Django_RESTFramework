@@ -13,7 +13,7 @@ def snippet_list(request):
 #    pass
     if request.method == 'GET':
         snippets = Snippet.objects.all()
-        serializer = SnippetSerializer(snippets, many=False)
+        serializer = SnippetSerializer(snippets, many=True)
         return Response(serializer.data)
 
     elif request.method == 'POST':
